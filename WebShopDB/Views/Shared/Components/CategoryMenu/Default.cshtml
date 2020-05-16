@@ -1,0 +1,17 @@
+﻿<li class="dropdown">
+    <a asp-controller="Mobile" asp-action="Index" class="dropdown-toggle"
+       data-toggle="dropdown">Mobile<b class="caret"></b></a>
+    <ul class="dropdown-menu">
+        @foreach (var category in Model)
+        {
+            <li>
+                <a asp-controller="Mobile" asp-action="List"
+                   asp-route-category="@category.CategoryName">@category.CategoryName</a>
+            </li>
+        }
+        <li class="divider"></li>
+        <li>
+            <a asp-controller="Mobile" asp-action="List" asp-route-category="">View all mobiles</a>
+        </li>
+    </ul>
+</li>

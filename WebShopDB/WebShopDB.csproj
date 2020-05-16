@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <IsTransformWebConfigDisabled>true</IsTransformWebConfigDisabled>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    
+    <PackageReference Include="microsoft.aspnetcore.identity.entityframeworkcore" Version="2.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.1-preview1-final" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="2.1.0-preview1-final" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4" />
+    <PackageReference Include="System.Linq.Dynamic" Version="1.0.7" />
+    <PackageReference Include="microsoft.aspnetcore.http.extensions" Version="2.0.1" />
+    <PackageReference Include="microsoft.aspnetcore.identity.entityframeworkcore" Version="2.0.1" />
+    <PackageReference Include="microsoft.aspnetcore.session" Version="2.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1-preview1-final" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\NewFolder1\" />
+    <Folder Include="Views\NewFolder\" />
+    <Folder Include="wwwroot\NewFolder\" />
+  </ItemGroup>
+  
+   
+</Project>

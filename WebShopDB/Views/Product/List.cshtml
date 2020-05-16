@@ -1,0 +1,33 @@
+﻿@*@{
+        ViewData["Title"] = "List";
+    }
+
+    <h2>List</h2>*@
+
+@model WebShopDB.ViewModel.ProductList
+
+@{
+    ViewData["Title"] = "List of Store";
+}
+
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>PC Builder</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="~/assetsi/css/main.css" />
+</head>
+<body>
+
+
+    <h2>@Model.CurrentCategory</h2>
+    @{
+        foreach (Product product in Model.productL)
+        {
+            @Html.Partial("ProductSummary", product)
+        }
+    }
+    </body>
+</html>

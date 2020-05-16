@@ -1,0 +1,44 @@
+﻿@model WebShopDB.ViewModel.LoginViewModel
+    <div class="row loginForm" style="background-color: black; color: white">
+        <div class="col-md-8 col-md-offset-2">
+            <h2>Please log in before placing an order.</h2>
+            <form asp-controller="Account" asp-action="Login" method="post" class="form-horizontal" role="form">
+                <h4>Enter your details below</h4>
+                <hr />
+                <input type="hidden" asp-for="ReturnUrl" />
+                <div class="form-group">
+                    <label asp-for="UserName" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <input asp-for="UserName" class="form-control" />
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group pull-right formPullRightButton">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" class="btn btn-primary" value="Log in" />
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="container">
+                <!--<ul class="icons">
+                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+            </ul>-->
+            </div>
+            <div class="copyright">
+                &copy; 2019. PC Builders. All rights reserved.
+            </div>
+        </footer>
+    </div>

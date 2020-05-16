@@ -1,0 +1,65 @@
+﻿@model WebShopDB.ViewModel.ShoppingCartViewModel
+
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>About Us</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="~/assets/css/main.css" />
+</head>
+<body>
+<div class="row checkoutForm" style="background-color:deepskyblue">
+    <h2>Your shopping cart</h2>
+    <h4>Here are the devices in your shopping cart.</h4>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Selected amount</th>
+                <th>Products</th>
+                <th class="text-right">Price</th>
+                <th class="text-right">Subtotal</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var line in Model.ShoppingCart.ShoppingCartItems)
+            {
+                <tr>
+                    <td class="text-center">@line.Amount</td>
+                    <td class="text-left">@line.Product.Name</td>
+                    <td class="text-right">@line.Product.Price.ToString("c")</td>
+                    <td class="text-right">
+                        @((line.Amount * line.Product.Price).ToString("c"))
+                    </td>
+                    <td class="text-center"><a class="glyphicon glyphicon-remove text-danger remove" asp-controller="ShoppingCart" asp-action="RemoveFromShoppingCart" asp-route-productId="@line.Product.ProductId"></a></td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-right">Total:</td>
+                <td class="text-right">
+                    @Model.ShoppingCartTotal.ToString("c")
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    <div class="text-right">
+        <div class="btn-group ">
+            <a class="btn btn-primary" asp-controller="Home" asp-action="Checkout">Check out</a>
+            <a class="btn-group">
+                <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    Continue Shopping<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="http://localhost:6701/Product/List">Continue Shopping</a></li>
+
+                </ul>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
